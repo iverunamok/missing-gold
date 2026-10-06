@@ -21,8 +21,12 @@ root.
 
 ## Step 0: budget
 
-Run `quota`. If `.env` is missing, run `init` and ask for the key. State
-the plan in one line: lanes × pages searches, plus about 4 units per
+Run `quota`. If it reports no key or `.env` is missing, do not ask for
+the key in chat. Tell the person to type `! python3 outliers.py init` in
+this session and paste the key at the prompt, then wait for them to say it
+is done and run `quota` again. If `python3` is not found, say which
+installer to use (python.org, tick "Add to PATH" on Windows) and stop.
+State the plan in one line: lanes × pages searches, plus about 4 units per
 verified row.
 
 ## Step 1: map the crowd
@@ -49,7 +53,8 @@ with the reason.
 
 ## Step 4: grade packaging
 
-`thumbs --file <raw.md> --cols 5` makes the contact sheet. Open it. Grade
+`thumbs --file <raw.md> --cols 5` makes the contact sheet. If it exits
+asking for Pillow, run `python3 -m pip install --user pillow` and retry. Open it. Grade
 each row BAD, MEDIOCRE, FACELESS, or GOOD per `docs/method.md`. GOOD is a
 cut.
 

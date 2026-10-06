@@ -458,7 +458,10 @@ def cmd_suggest(args):
 def cmd_thumbs(args):
     """Download mqdefault thumbnails for every video id found in a markdown
     file (or given directly) and tile them into one contact sheet."""
-    from PIL import Image, ImageDraw  # optional dependency, only here
+    try:
+        from PIL import Image, ImageDraw  # optional dependency, only here
+    except ImportError:
+        sys.exit("thumbs needs Pillow. Run: python3 -m pip install --user pillow")
     ids = list(dict.fromkeys(args.ids))
     if args.file:
         text = open(args.file, encoding="utf-8").read()

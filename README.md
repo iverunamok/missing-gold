@@ -12,6 +12,27 @@ runs bare. The search design is copied from
 [pandich93/youtube-niche-finder](https://github.com/pandich93/youtube-niche-finder)
 (MIT): search once, then read cheaply.
 
+## Start here, with Claude Code
+
+Three steps. The key is the only part you do by hand.
+
+1. Get a free YouTube Data API key (five minutes, no billing). Steps are
+   under "Get a key" below.
+2. In a terminal:
+
+   ```
+   git clone https://github.com/iverunamok/missing-gold && cd missing-gold && claude
+   ```
+
+   Inside Claude Code, type `! python3 outliers.py init` and paste the key
+   at the prompt. It lands in `.env`, which git ignores. The key never goes
+   into the chat.
+3. Type `/missing-gold "I help X do Y"` with your own niche. Claude Code
+   runs the whole method and writes the ranked shortlist to `shortlists/`.
+
+Python 3.9 or later is the only requirement. macOS has it. On Windows,
+install it from python.org and tick "Add to PATH".
+
 ## The method, in one table
 
 | Gate | Threshold | Why |
@@ -30,7 +51,7 @@ grading rubric and the sort key.
 ## Quick start
 
 ```
-git clone https://github.com/<you>/missing-gold && cd missing-gold
+git clone https://github.com/iverunamok/missing-gold && cd missing-gold
 python3 outliers.py init          # pastes the key into .env, creates seen.md
 python3 outliers.py suggest "your niche"
 python3 outliers.py hunt "lane one" "lane two" --pages 2 --out shortlists/first.md
