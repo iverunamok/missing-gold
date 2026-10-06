@@ -1,0 +1,2 @@
+# Aider reads no instruction file automatically. This makes it read AGENTS.md.
+read: AGENTS.md

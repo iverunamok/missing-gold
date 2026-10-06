@@ -1,0 +1,2 @@
+# The tool runs on the standard library. These add one command each.
+Pillow>=10      # thumbs: the thumbnail contact sheet

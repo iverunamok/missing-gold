@@ -1,0 +1,11 @@
+.env
+cache/
+quota.json
+__pycache__/
+client_secret.json
+token.json
+token-*.json
+watch.json
+AGENTS.context.md
+seen.md
+shortlists/
